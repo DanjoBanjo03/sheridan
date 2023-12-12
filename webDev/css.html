@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title> Web Dev CSS</title>
+    <style>
+        body{
+            font-family: verdana;
+            background-color: aquamarine;
+        }
+        h1{font-size: 20; color:purple; }
+        .special{background-color: yellow; 
+            padding: 20px;
+            border-top:thick red solid; 
+            border-bottom: thick red solid; 
+            text-align:center;
+            text-transform: uppercase;
+        }
+        p{
+            padding-left: 20px;
+        }
+        .button{
+            display:inline-block;
+            margin-left: 20px;
+            padding: 10px 20px;
+            background-color: blueviolet;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: rgba(0,0,0,.5) 5px 5px 5px;
+            text-transform: uppercase;
+        }
+        .button:hover{
+            background-color: violet;
+        }
+
+        #more {
+            /* opacity:20%; */
+            position: relative;
+            /* position:absolute; */
+            /* top: 20px; */
+        }
+        #sunny{
+            display: inline-block;
+            color:orange;
+            background-color: aqua;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            /* for padding:
+                10px -everywhere
+                10 20 - 10 top/bottomand 20px left/right 
+                10 0 20 7px- top right bottom left
+                */
+            padding:0px 10px 6px 10px;
+        }
+    </style>
+</head> 
+<body>
+    <h1>CSS Basics</h1>
+    <div class="special">Wow Style in <a href="">HTML!</a></div>
+    <p>The weather is <span id = sunny>sunny</span>!</p>
+    <p style="font-size:10px; color:red;">This is just the start!</p>
+
+    <a id="more" class=button href="">See More</a>
+
+    <p>Footer goes here - but one day in footer tag</p>
+
+</body>
+</html>
