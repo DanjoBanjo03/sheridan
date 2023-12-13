@@ -17,7 +17,7 @@ Data hiding: objects ability to hide its data attributes from outside the object
 
 Instance Attributes: Self parameter
 
-accessor method: returns a value from a class’s attribute but does not change
+Accessor Method: returns a value from a class’s attribute but does not change
 Class Attribute: one copy of a particular attribute should be shared by all objects of the class 
 
 Shared Constants: constants that are common to all instances of a class
@@ -34,3 +34,4 @@ Association is a general binary relationship that describes an activity between 
 Aggregation is a special form of association that represents an ownership between two objects from each class
 Composition is a strong form of aggregation, in which the "parts" cannot exist without the "whole"
 Inheritance means that a very general form of a class can be defined and compiled
+
