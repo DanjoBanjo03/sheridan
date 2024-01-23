@@ -11,9 +11,25 @@ import zim from "https://zimjs.org/cdn/015/zim";
 
 // See Docs under Frame(it's a class) for FIT, FILL, FULL, and TAG
 // If the color is in a "" will use HTMl color
-new Frame(FIT, 1024, 768, interstellar, dark, ready);
+new Frame(FIT, 1024, 768, interstellar, dark, ready, ["a0.png", "boom.png", "boom.mp3"], "assets/");
 function ready() {
     
+
+    // const asteroid = new Pic("a0.png")
+    //     .cur("crosshair")
+    //     .centerReg();
+
+    // const boom = new Aud("boom.mp3");
+    // const explosion = new Sprite("boom.png", 8, 6).reg(CENTER).sca(1.5); //.center().run();
+    // asteroid.on("mousedown", ()=>{
+    //     boom.play();
+    //     explosion.loc(asteroid).run();
+    //     //asteroid.dispose();
+
+    // })
+
+    
+
     // given F (Frame), S (Stage), W (width), H (height)
     // put code here
 
