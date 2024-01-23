@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Animation</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+// See Docs under Frame(it's a class) for FIT, FILL, FULL, and TAG
+// If the color is in a "" will use HTMl color
+new Frame(FIT, 1024, 768, interstellar, dark, ready, ["a0.png", "boom.png", "boom.mp3"], "assets/");
+function ready() {
+    
+
+    // const asteroid = new Pic("a0.png")
+    //     .cur("crosshair")
+    //     .centerReg();
+
+    // const boom = new Aud("boom.mp3");
+    // const explosion = new Sprite("boom.png", 8, 6).reg(CENTER).sca(1.5); //.center().run();
+    // asteroid.on("mousedown", ()=>{
+    //     boom.play();
+    //     explosion.loc(asteroid).run();
+    //     //asteroid.dispose();
+
+    // })
+
+    
+
+    // given F (Frame), S (Stage), W (width), H (height)
+    // put code here
+
+    //radius, sides, pointSize, color
+    //[.2,.3,.5]
+    //new Tile(new Poly(50, [5, 6, 7], {min:.4, max:.8}, series(purple, pink, yellow, blue)), 8, 6, 10, 10).center();
+
+   //setInterval(makeStar, 500); // run function every .5 sec
+
+   // interval(1, makeStar); //ZIM inertval shorter name and switch order
+   // makeStar();
+   
+    // function makeStar() {
+    //     new Poly(75, [5, 6, 7], {min:.4, max:.8}, [purple, green, yellow, blue], dark, 4)
+    //         //.center();
+    //         //.loc(200, 400);
+    //         .loc(Math.random()*W, Math.random()*H);
+    //     S.update();
+    // }
+
+    // anonymous function
+    // interval(1, function(){});
+
+    //const circle = new Circle(100,red).center();
+    //interval(.01, ()=>{
+    //    circle.x += 2;
+    //    S.update(); // since we have animate we dont really need this
+    //})
+
+    //Updates at refresh rate of monitor for raw animation
+    //Ticker.add(()=>{
+       // circle.x += .5;
+       // S.update(); // since we have animate we dont really need this
+    //})
+    
+    const stars = new Container(W, H).addTo(); // you can use .sca(.5) to shrink container (scale)
+    // arrow function - new in ES6 (JS 6)
+    interval({min:.1, max:2}, ()=>{
+        new Poly(50, [5, 6, 7], {min:.5, max:.8}, [purple, green, yellow, blue], dark, 3)
+            //.center();
+            //.loc(200, 400);
+            .loc(Math.random()*W, -100, stars)
+            .animate({y:H+100}, 2, "linear", target=>{target.dispose();});
+        S.update();
+    }, undefined, true); // number and run right away
+
+    const circle = new Circle(50, blue).pos(0, 50, CENTER, BOTTOM);
+
+    // event object - usually called e but could be evt or eventObject
+    // F.on("keydown", e=>{ //optional round brackets due to only one parameter
+    //     //.zogr(e.key) //writes key pressed in console
+    //     if (e.key == 'ArrowRight') circle.x += 5; //dont need brackets cause its on one line
+    //     else if (e.key == 'ArrowLeft') {
+    //         circle.x -= 5;}
+    //     if (circle.x > W-circle.radius) circle.x = W-circle.radius;
+    // })
+
+    new MotionController(circle, 'keydown', 10, HORIZONTAL, new Boundary(circle.radius, circle.y, W-circle.width, 0));
+
+    //hittest
+
+    //loop for array
+    // for (let i=0; i<stars.length: i++){
+    //     let star = stars.[i];
+    // }
+
+    //loop for container
+    // for (let i=0; i<stars.numChildren; i++){
+    //     let star = stars.getChildAt(i);
+    // }
+
+    const emitter = new Emitter({startPaused:true}).center()
+
+    Ticker.add(()=>{
+        stars.loop(star=>{
+            if(circle.hitTestCircles(star)) {
+                emitter.loc(star).spurt(10);
+                star.dispose();
+            }
+        }, true); //true for loop backwards
+    })
+    
+
+} // end ready
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>

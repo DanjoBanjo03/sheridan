@@ -1,0 +1,44 @@
+Routing: Finding the best (depends on the criteriea) path to every destination
+
+RIP: Use hop (# of routers you pass through) count (fewest # of hops) - this does not take into account fastest path, bus 1 which has 1 transfer but 50 min or bus 2, no transfers but 3 hours. RIP will go bus 2 less transfers.
+
+Dijkstra's algorithm <---OSPF--->>>VVVV<----EIGRP ---> cisco routers only (u can buy windows for apple but not apple for windows)
+							Calculate a path
+							weight based on a
+							throughput bandwith,
+							latency to generate
+							a path weight
+
+Forwarding: using data from routing to actually send the message
+* routing table is the same thing as the forwarding table*
+
+default routing: 0.0.0.0/0
+-> sends all traffic one way
+-> often used as a catch all for routing
+
+DHCP
+Automatically assigns an IP when a PC join a network
+
+1. PC makes a DHCP broadcast request for an IP
+2. All DHCP servers will offer 1 available IP - those IP's are now reserved
+3. The PC will accept the first IP it recieves
+4. PC broadcasts its new IP. Any unused IP's are now free to use
+
+Private (10,172,192)
+-> free
+-> no internet access
+-> ipconfig
+
+NAT
+-> Maps private IP to piblic
+
+Benefits
+1. Security
+2. saves on IP's
+-> devices live printers dont need public IP's
+-> share 1 public IP for multiple users
+
+Public
+-> pay
+-> Internet Access
+-> google

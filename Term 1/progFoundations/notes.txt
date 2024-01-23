@@ -1,0 +1,37 @@
+Compiling/Parsing error - when the program doesnt compile
+Run time error - for programs that require an input
+Logical Error - Math error
+
+SyntaxError: Error is in the syntax (pirnt)
+IndexError: error when index is not found in a sequence
+KeyError: when a key is not found in a dictionary
+ValueError: When value is invalid
+ZeroDivisonError: Division by zero or modulo by zero for numbers
+FileNotFoundError: trying to access a file that does not exist
+AttributeError: Failed to access Attribute
+Exception: Most common one, for all Exceptions
+
+Two methods: procedural and object oriented
+Encapsulation: Combining data and code into a single object
+Data hiding: objects ability to hide its data attributes from outside the object
+
+Instance Attributes: Self parameter
+
+Accessor Method: returns a value from a class’s attribute but does not change
+Class Attribute: one copy of a particular attribute should be shared by all objects of the class 
+
+Shared Constants: constants that are common to all instances of a class
+Counting Instances: Class attributes can be used to keep track of the number of instances created.
+Configuration Settings: class needs certain configuration settings that are the same for all instances
+
+Factory Methods: When you need to create an instance of a class with specific characteristics
+Alternate Constructors: Class methods are often used as alternate constructors to provide different ways of creating instances.
+Accessing Class Attributes: If a method needs to access or modify class attributes
+
+Relationships: one-to-one, one-to-many, and many-to-many
+
+Association is a general binary relationship that describes an activity between two classes
+Aggregation is a special form of association that represents an ownership between two objects from each class
+Composition is a strong form of aggregation, in which the "parts" cannot exist without the "whole"
+Inheritance means that a very general form of a class can be defined and compiled
+

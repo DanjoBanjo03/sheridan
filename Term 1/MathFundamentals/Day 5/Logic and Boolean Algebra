@@ -1,0 +1,71 @@
+Logic and Boolean Algebra
+Propositional Logic
+Logical statements/ propositions: are declarative statemnts which can either be true or be false
+Today is Tuesday: True
+T=1
+The truth value of this statemnt is 1
+Onatrio is the capital of Canada: False
+F=0
+
+Today is tuesday: P
+It is sunny today: Q
+
+Connectives/ Logical operators
+1. NOT operator (negation)
+ `, !, '
+ P: Today is tuesday
+ !P, P', `P : Today is not tuesday
+
+ 2. AND operator
+ ^, *, &&
+ P: today is tuesday
+ Q: it is sunny today
+P^Q, P*Q, P&&Q
+
+3. OR operator
+v, +, ||
+P+Q = Today is tuesday OR it is sunny
+
+4. Exclusive or XOR (+)
+P XOR Q: This morning you can go to school or you can stay at home
+
+5. Implication (conditonal)
+if... then (--->)
+
+6. Bioconditional (<-->) (If and only if)
+You can take the flight if and only if you buy a ticket
+
+Order of precedance
+1. Brackets
+2. NOT
+3. AND
+4. OR/XOR (left to right)
+5. Implication
+6. Biconditional
+
+Find the truth value of each experssion using the truth values given:
+a) 0*S+1*T
+where S=1
+and T = 0
+0*1+1*0
+0+0 = 0 
+
+(A^B^C) v (A^!(B^C))
+Where A = 1 , B = 0 and C = 1
+(1*0*1)+(1*!(0*1))
+(0)+(1*!(0))
+(0)+(1*1)
+0+1 = 1
+
+!(PQ)(P+(!Q)), P = 1 Q = 1
+!(1*1)(1+(!1))
+!(1)*(1+(0))
+0*1
+0 - False
+
+D!EF+!DE*F+DEF D = 0 E= 0 F=1
+0!0!1 + !0!0* 1 + 0*0*1= 
+(0*1*0)+(1*1*1)+(0*0*1)
+(0)+(1)+(0)
+1 - True
+
