@@ -1,8 +1,0 @@
-Hub - Sends to all
-
-Bridge - remembers all locations and sends only if it knows the location of the destination
-
-Switch - Sends to all if they dont know where, and stores location. Then if someone tries to send to already saved location itll send directly, no send to all.
-
-Routers - Work using IP addresses, routing protocol: has routers share their routing info. Default routing: we use 0.0.0.0/0 to represent any destination (send all traffic out an interface)
-
