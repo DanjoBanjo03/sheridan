@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Sonic</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+const pics = ['coins.png']
+const assets = [...pics,"running.png", "backer.jpeg", "font.ttf", "grass.png", "sonicup.png", "music.mp3"]
+
+new Frame(FIT, 1720, 1080, black, green, ready, assets, "assets/");
+function ready() {
+
+    var value = 0;
+    
+    
+    const backing = new Pic("backer.jpeg").scaleTo().alp(.5).center();
+    const land = new Pic("grass.png").sca(4.5).pos(0, -300 , LEFT, BOTTOM);
+    const coinz = new Container(W, H).addTo();
+    const music = new Aud("music.mp3", null, true);
+    let backingSound;
+
+    new Scroller(backing);
+    new Scroller(land);
+    const sonic = new Pic("sonicup.png")
+        .pos( 0, 450, LEFT, CENTER)
+        .sca(.3);
+
+    const points = new Label("Points: ", 50, "font", white)
+        .pos( 20, 50, LEFT)
+        .alp(.7)
+        .vis(false)
+    var score = new Label(value, 50, "font", white)
+        .pos( 220, 53, LEFT)
+        .alp(.7)
+        .vis(false)
+
+    const toggle = new Toggle({label:"Music", color:"white", backgroundColor:"green"})
+        .sca(.7)
+        .pos(30,30,RIGHT,TOP)
+        .change(e=>{
+            if (!backingSound) backingSound = music.play();
+            else backingSound.paused = !e.target.toggled;
+        });
+    
+    const updateScore = () => {
+        score.text = value;};
+
+    new MotionController(sonic, 'keydown', 20, HORIZONTAL, S);
+
+    const title = new Label("S O N I C", 200, "font", white, null, true)
+        .pos(0, 50, CENTER);
+        
+
+    
+
+    
+
+
+    interval({min:.1, max:2}, ()=>{
+            const coin = new Sprite("coins.png", 8, 4)
+                .reg(CENTER)
+                .sca(1.5)
+                .loc(Math.random()*W, -100, coinz)
+                .animate({y:H+100}, rand(2,4), "linear", target=>{target.dispose();});
+            coin.run({time:2.5, loop:true});
+        }, undefined, true);
+
+
+    Ticker.add(()=>{
+        coinz.loop(coin=>{
+            if(sonic.hitTestCircles(coin)) {
+                coin.dispose();
+                title.dispose()
+                score.vis(true)
+                points.vis(true)
+                value += 10
+                updateScore();
+            }
+        }, true); 
+    })
+    
+
+} 
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
