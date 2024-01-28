@@ -11,31 +11,49 @@ import zim from "https://zimjs.org/cdn/015/zim";
 const pics = ['coins.png']
 const assets = [...pics,"running.png", "backer.jpeg", "font.ttf", "grass.png", "sonicup.png", "music.mp3"]
 
-new Frame(FIT, 1720, 1080, black, green, ready, assets, "assets/");
+new Frame(FIT, 1920, 1080, black, green, ready, assets, "assets/");
 function ready() {
 
     var value = 0;
+    var rings = 0;
+    var count = 30;
     
     
     const backing = new Pic("backer.jpeg").scaleTo().alp(.5).center();
-    const land = new Pic("grass.png").sca(4.5).pos(0, -300 , LEFT, BOTTOM);
+    const land = new Pic("grass.png").sca(6.7, 4.5).pos(-100, -300 , CENTER, BOTTOM);
     const coinz = new Container(W, H).addTo();
     const music = new Aud("music.mp3", null, true);
     let backingSound;
+    let timerStarted = false;
+
+
 
     new Scroller(backing);
     new Scroller(land);
     const sonic = new Pic("sonicup.png")
-        .pos( 0, 450, LEFT, CENTER)
+        .reg(CENTER)
+        .pos( 0, 200, LEFT, CENTER)
         .sca(.3);
 
-    const points = new Label("Points: ", 50, "font", white)
+    const points = new Label("Points: " + value, 50, "font", white)
         .pos( 20, 50, LEFT)
         .alp(.7)
         .vis(false)
-    var score = new Label(value, 50, "font", white)
-        .pos( 220, 53, LEFT)
+
+    const timerLabel = new Label("Time: " + count, 50, "font", white)
+        .pos(0, 50, CENTER)
         .alp(.7)
+        .vis(false);
+
+
+    const totalRings = new Label("Rings collected: " + rings, 100, "font", white)
+        .pos(0, -140, CENTER, CENTER)
+        .vis(false)
+    const finalScreen = new Label("Points Earned: " + value, 150, "font", white) 
+        .center()
+        .vis(false)
+    const refresh = new Label('Please refresh to play again', 50, "font", white)
+        .pos(0, 100, CENTER, CENTER)
         .vis(false)
 
     const toggle = new Toggle({label:"Music", color:"white", backgroundColor:"green"})
@@ -47,19 +65,17 @@ function ready() {
         });
     
     const updateScore = () => {
-        score.text = value;};
+        points.text = "Points: " + value;};
 
-    new MotionController(sonic, 'keydown', 20, HORIZONTAL, S);
+    const move = new MotionController(sonic, 'keydown', 20, HORIZONTAL, S);
 
     const title = new Label("S O N I C", 200, "font", white, null, true)
         .pos(0, 50, CENTER);
+
+    const updateTimerLable = () => {
+        timerLabel.text = "Time: " + count;
+    };
         
-
-    
-
-    
-
-
     interval({min:.1, max:2}, ()=>{
             const coin = new Sprite("coins.png", 8, 4)
                 .reg(CENTER)
@@ -75,14 +91,37 @@ function ready() {
             if(sonic.hitTestCircles(coin)) {
                 coin.dispose();
                 title.dispose()
-                score.vis(true)
-                points.vis(true)
-                value += 10
-                updateScore();
+                rings += 1
+                value += rand(1, 10)
+                if (count > 0){
+                    points.vis(true)
+                    updateScore();}
+                timerLabel.vis(true)
+                if (!timerStarted) {
+                    timerStarted = true;
+                    const timer = setInterval(function() {
+                    count--;
+                    console.log(count);
+                    updateTimerLable();
+                    if (count === 0) {
+                        clearInterval(timer);
+                        console.log("Time's up!");
+                        title.vis(true)
+                        points.dispose()
+                        totalRings.text = "Rings collected: " + rings;
+                        totalRings.vis(true)
+                        finalScreen.text = "Points Earned: " + value; // Update the final screen text
+                        finalScreen.vis(true)
+                        refresh.vis(true)
+                        move.pause();
+                        }
+            
+                    }, 1000);
+                }
+                
             }
         }, true); 
     })
-    
 
 } 
 
