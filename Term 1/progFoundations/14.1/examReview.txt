@@ -1,0 +1,42 @@
+4 times, (last number is not included, multiply the loops)
+2 times
+0 to 14 
+c
+a
+b
+c
+d
+b
+a
+d
+c
+b
+d
+b
+a
+a
+b
+d
+b
+
+a value used to terminate a loop or a sequence
+Initial read before entering loop, usually to init variables
+[2, 2, 2, 2, 2]
+A key and a value
+When a variable can nbe read and used
+open, write,read, or add and close the file
+unordered
+a= keyword b = position
+x=1
+
+def half(number):
+    return number // 2
+
+def get_first_name():
+    name = input('Please enter your first name')
+    return name
+
+writes over it
+ValueError
+__
+to print out the final results by simply calling it
