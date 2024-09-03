@@ -1,4 +1,0 @@
-(a) No, there are no compile errors. It creates an ArrayList without specifying the type, which defaults to Object.
-
-(b) Yes, there is a compile error. It tries to add a String object to an ArrayList of Date objects, which is not allowed.
-It's because the type of the ArrayList is explicitly specified as Date.

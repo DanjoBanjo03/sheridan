@@ -1,6 +1,0 @@
-Write a class called OverloadedFun that contains the following overloaded method:
-- findLargest which will accept two ints and return the largest one.
-- Now, overload findLargest to work with three ints, four ints, or five ints…
-
-Think about this before you begin!  Remember the IceCream Truck!
-Write a Start class with a main method in order to test your overloaded methods.
