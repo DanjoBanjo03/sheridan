@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NodeJS with Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="database.css">    
+</head>
+
+<body>
+
+    <header>
+        <h1>Database</h1>        
+    </header>
+
+    <br><br>
+    <form action="/database" method="post">
+
+        <label for="name">Name
+            <br>
+            <input type="text" id="name" name="name" required>
+        </label>
+        <br>
+        <label for="city">City
+            <br>
+            <input type="text" id="city" name="city" list="list" required>
+        </label>
+        <br>
+        <label for="username">Color
+            <br>
+            <input type="color" id="color" name="color" required>
+        </label>
+        <br>
+        <input type="submit">
+
+        <datalist id="list">
+            <option>Oakville</option>
+            <option>Toronto</option>
+            <option>Hamilton</option>
+            <option>Brampton</option>
+            <option>Mississauga</option>
+            <option>Burlington</option>
+        </datalist>
+
+    </form>
+
+</body>
+
+</html>

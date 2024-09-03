@@ -1,0 +1,9 @@
+You have been given a class called JokeMachine - don't even look at it!  You won't need to.
+
+Create a class called HaHaHa with a main method
+
+Without ever opening the JokeMachine class to see what's inside, Instantiate a JokeMachine object and figure out how to call methods to return jokes and print them out!   Note that, because the JokeMachine class is in the same package (yourturn1) as the HaHaHa class, we don't have to import it.
+
+For the supersmartypants - can you print out how many jokes are in the JokeMachine and can you print out the world's funniest joke?  Hint, remember the⁡⁢⁣⁢ dot-->⁡  ⁡⁢⁣.  ⁡⁢⁣⁢<--dot⁡
+
+Also for the supersmartypants - take a look at how the JokeMachine was built - there are a bunch of things in there that we haven't learned yet but see if you can figure out how it works

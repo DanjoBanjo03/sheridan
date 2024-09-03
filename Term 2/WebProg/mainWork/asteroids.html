@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Animation</title>
+
+<!-- zimjs.com - JavaScript Canvas Framework -->
+<script type=module>
+
+import zim from "https://zimjs.org/cdn/015/zim";
+
+const pics = ["a0.png", "a1.png", "a2.png", "a3.png", "a4.png", "a5.png", "a6.png"]
+const assets = [...pics, "boom.png", "space_h.jpg", "boom.mp3", "hit.mp3", "pod.png", "shoot.mp3", "space.jpg"]
+
+new Frame(FIT, 1920, 768, black, black, ready, assets, "assets/");
+function ready() {
+
+    var value = 0;
+    var score = new Label(value, 50, null, white)
+                    .pos( 50, 50, LEFT)
+                    .alp(.5)
+                    .vis(false)
+    const title = new Label("A S T E R O I D S", 200, null, white)
+        .pos(0, 50, CENTER);
+    const backing = new Pic("space.jpg").scaleTo().alp(.5).center();
+    new Scroller(backing, null, -1, false);
+    const boom = new Aud("boom.mp3");
+    const explosion = new Sprite("boom.png", 8, 6).reg(CENTER).sca(1.5);
+    const asteroids = new Container(W, H).addTo(); 
+
+    interval({min:.1, max:2}, ()=>{
+        new Pic(pics)
+            .reg(CENTER)
+            .sca(.5)
+            .loc(Math.random()*W, -100, asteroids)
+            .animate({y:H+100, rotation:rand(-600, 600)}, rand(2,4), "linear", target=>{target.dispose();});
+    }, undefined, true); 
+
+    const pod = new Pic("pod.png")
+        .reg(CENTER)
+        .sca(0.3)
+        .pos(0, 50, CENTER, BOTTOM);
+
+    const updateScore = () => {
+        score.text = value;};
+
+    new MotionController(pod, 'keydown', 20, HORIZONTAL, S);
+
+
+
+    Ticker.add(()=>{
+        asteroids.loop(asteroid=>{
+            if(pod.hitTestCircles(asteroid)) {
+                boom.play();
+                explosion.loc(asteroid).run()
+                asteroid.dispose();
+                score.vis(true)
+                title.dispose()
+                value += 10
+                updateScore();
+                
+            }
+        }, true); 
+    })
+    
+
+} 
+
+</script>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+</head>
+<body></body>
+</html>
