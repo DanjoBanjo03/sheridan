@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Generator Result</title>
+    <link rel="stylesheet" href="cars.css">
+</head>
+<body>
+    <header>
+        <img src="assets/banner.jpeg" alt="banner of a car">
+        <h1 class="resultsTitle">Random Car Generator Result</h1>
+    </header>
+    <div class="results" >
+        <h2>Generated Car Details</h2>
+        <p id="carDetails">Year: <%= car.Year %><br>Make: <%= car.Make %><br>Model: <%= car.Model %><br>Category: <%= car.Category %></p>
+    </div>
+
+    <div id="selectedCarsContainer">
+        <h2>Selected Cars:</h2>
+        <% selectedCars.forEach(function(car) { %>
+            <p>Year: <%= car.Year %>, Make: <%= car.Make %>, Model: <%= car.Model %>, Category: <%= car.Category %></p>
+        <% }); %>
+    </div>
+
+    <button id="clearButton">Clear</button>
+
+    <script>
+        document.getElementById('clearButton').addEventListener('click', function() {
+            fetch('/clearSelectedCars', { method: 'POST' })
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('selectedCarsContainer').innerHTML = '<h2>Selected Cars</h2>';
+                    } else {
+                        console.error('Failed to clear selected cars');
+                    }
+                })
+                .catch(error => console.error('Error clearing selected cars:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+
+    <script>
+
+        window.addEventListener("DOMContentLoaded", ()=>{
+            console.log(location.search);
+
+            let results = location.search.split("?")[1];
+            results = results.split("&")[1];
+            results = results.split("=")[1];
+            results = decodeURIComponent(results);
+
+            const weather = document.getElementById("weather");
+            weather.innerText = "Weather is " + results;
+        });
+        
+    </script>
+</head>
+<body>
+    <div id="weather"></div>
+</body>
+</html>

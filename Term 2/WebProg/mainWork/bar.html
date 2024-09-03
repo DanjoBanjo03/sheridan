@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bar</title>
+    <style>
+        nav {
+            background-color: #ddd;
+            padding: 10px;
+            white-space: nowrap
+        }
+        #arrow {
+            color: red;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        #links {
+            display: inline-block;
+        }
+        #links a {
+            margin:0px 10px;
+        }
+    </style>
+    <script>
+    window.addEventListener("DOMContentLoaded", ()=>{
+        const arrow = document.getElementById("arrow");
+        const links = document.getElementById("links");
+
+        arrow.style.cursor = "pointer";
+
+        arrow.addEventListener("mousedown", ()=>{
+            console.log("mousedown");
+            if (arrow.innerText == "◀"){
+            links.style.display = "none";
+            arrow.innerText = "▶";
+            }else {
+                links.style.display = "inline-block"
+                arrow.innerText = "◀";
+            }
+        });
+    })
+        // ▶ ◀
+    </script>
+</head>
+<body>
+    <nav><div id="arrow">◀</div>
+        <div id="links">
+            <a href="">ONE</a> | <a href="">DUO</a> | <a href="">TRI</a>
+        </div>
+    </nav>
+</body>
+</html>

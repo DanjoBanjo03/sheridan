@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input[type='text'] {background-color: green; color: white;}
+        input:invalid {background-color: red;}
+    </style>
+    <script>
+
+        window.addEventListener("DOMContentLoaded", ()=>{
+            const test = document.getElementById("test");
+            const validate = document.getElementById("validate");
+
+            test.addEventListener("submit", e=>{
+
+                if (!validate.value.match(/a/)){
+                    console.log(validate.value);
+                    e.preventDefault();
+                }
+            })
+        })
+
+        
+    </script>
+</head>
+<body>
+    <form id="test" action="results.html">
+
+        <!-- <input type="email" required name="email">
+        <br></br>
+        <input type="submit"> -->
+
+        <!-- <input pattern="a{2,5}" type="text" required name="validate"> -->
+        <!-- <input pattern="[a-zA-Z]\d[a-zA-Z]-?\d[a-zA-Z]\d" type="text" required name="validate"> -->
+        <!-- <input pattern="(mar|march) [1-3]?[0-9]" type="text" required name="validate"> -->
+        <!-- <input pattern="\w+\.\w{2,3}" type="text" required name="validate"> -->
+
+        <input type="text" id="validate" name="validate">
+        <br></br>
+        <input type="submit">
+
+    </form>
+</body>
+</html>
