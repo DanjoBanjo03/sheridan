@@ -1,0 +1,56 @@
+Malware is a software that enters the users PC without them knowing and then performs malicious actions
+Types: Imprison, Launch, Snoop, Decieve and Evade
+
+Imprison: Malware that wants to remove the users freedom
+Types: Ransomware and Cryptomalware
+Ransomware - Locks the computer down and limits what the user can do until fee is paid
+Cryptomalware - A malware that imprisons the user and encrypts the all the files on the device while the cost to the key increases per hour/day
+
+Launch: Malware that infects a computer to launch attacks onto other computers includes viruses, bots, or worms.
+Types of Virus: File-based virus and Fileless virus
+File-based - Malicious code that is attached to file and reproduces itself on the same computer
+Note: An armored file-based virus tries to go long without detection (Split infection and mutation)
+Fileless: Doesn't attach to a file but rather attaches to native services and parts of the OS to avoid detection and attacks
+Note: Advantages compared to file-based - Easy to infect, extensive control, persistent, difficult to detect, difficult to defend against
+Worm - Malicious program that uses a computer network to replicate(somestimes called a network virus)
+Bot - Malware that allows the infected computer to be placed uner the remote control of an attacker for the purpose of launching attacks
+When lots of bot computers are gathered into a logical computer network, they create a botnet under control of bot herder
+
+Snoop has two types of malware, spyware and keyloggers
+Spyware - Spyware is a tracking software that is deployed without the consent or control of user
+Keylogger - Silently captures and stores each keystroke that a user types into the computers keyboard
+
+Decieve: Some malware attempts to decieve the user and hide its true intentions (PUPs, Trojans and remote access trojans (RATs))
+Potentionally unwanted programs (PUPs) - Software that the user does not want on their computer (Ads and pop up windows)
+Trojan - Hides as something that is nothing important but the true intentions are much worse
+Remote access trojans (RATs) - Basic functionality of a Trojan but it gives the root of the virus remote access of the computer by special protocols
+
+Evade: Malware that helps malware or help evade detection (Backdoor, logic bomb, and rootkit)
+Backdoor - Gives access to a computer, program or service that prevents any normal security protocols
+Logic Bomb - A computer code that is typically added to a legit program but lies dormant and evades detection until a specific logical event triggers it
+Rootkit - Malware that hides its presence and other malware presence (by accessing "lower layers" of the OS)
+
+Application Attacks: Another category of attacks look for vulnerabilities in applications or manipulate applications in order to compromise them
+
+Scripting: In a cross-site scripting (XSS) attack, a website that accepts user input without validating it and uses that input in a response can be exploited
+
+Injection: Introduce new input to exploit vulnerabilities (usually SQL injection)
+SQL (Structured Query Language) - Targets SQL servers by introducing malicious commands into them
+
+Request Forgery: A request that has been fabricated
+2 types of forgery: Cross-site request forgery (CSFR) and a server-site request forgery (SSRF)
+Cross-Site: Takes advantage of an authentication "token" that the website sends to a user's web browser
+Server-site: Takes advantage of trusting relationsip between web servers, and exploit how a web server processes external information received from another server
+
+Replay attacks: Commonly used against digital identities (After intercepting and copying data, the threat actor retransmits the info later to impersonate the user)
+
+Attacks on Software: Other attacks are focused on vulnerabilities in the software applications
+Includes: Exploiting memory vulnerabilities, Improper exception and error handling, and External software components
+Memory vulnerabilities - Also called resource exhaustion attacks because they deplete parts of memory and get in the way of normal operation
+Cont... - A buffer overflow attack occurs when a proccess attempts to store data in the RAM beyond the boundaries of a fixed-length storage buffer
+Improper exception handling - Usually these attacks are results of poor coding from the software developers. Allows user to enter data but has improper data handling. 
+Another is a NULL pointer/object dereference, when pointer is NULL it will crash the application.
+Attacks on External Software - In addition to attacking the software directly, threat actors also target external software components. These include the following: Application program interface (API), Device driver, and Dynamic-link library (DLL)
+
+Cybersecurity: Using artificial intelligence to enhance detection of malicious behaviour and advanced threats
+ML - Machine Learning

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- Thymeleaf namespace should be added for template processing -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Class011Example</title>
+</head>
+<body>
+Input Data <br>
+<p th:text="'User name: ' + ${lastName} + ', ' + ${firstName}"> </p>
+<p th:text = " 'Application: ' + ${Message}"> </p>
+<br>
+<a href="/index">Confirm</a>
+</body>
+</html>

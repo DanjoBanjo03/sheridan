@@ -1,0 +1,7 @@
+DDL - Create Alter Drop
+DMI - Select Update Delete Insert Merge
+
+PL - Procedural Language, an extension to SQL that allows use programing techniques to extend usefulness of SQL
+
+CLOB, NCLOB and LOB - Large Object (Ebooks, pictures and so on)
+

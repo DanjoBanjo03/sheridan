@@ -1,0 +1,58 @@
+<!-- SYST24444-jsReview -->
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Review</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="./js/myscript.js"></script>
+	<link href="./css/main.css" rel="stylesheet">
+</head>
+<!-- Create function for loading elements when browser page loads -->
+<body onload="loadHeader()">
+	<h3></h3>
+
+	<div class="gridArea">
+		<!-- Create functions to complete tasks in button text -->
+		<div id="buttons1">
+			<button onclick="gifImages()">Toggle border for <strong>GIF</strong> Images</button>
+			<button onclick="pngHideShowUsingDisplay()">Toggle (Hide/Show) <strong>PNG</strong> Images (display)</button>
+			<button onclick="pngHideShowUsingVisibility()">Toggle (Hide/Show) <strong>PNG</strong> Images (visibility)</button>
+		</div>
+
+		<div id="list">
+			<figure><img src="./images/logical.gif"><figcaption>GIF</figcaption></figure>
+			<figure><img src="./images/web.png"><figcaption>PNG</figcaption></figure>
+			<figure><img src="./images/Canada_flag.jpg"><figcaption>JPG</figcaption></figure>
+			<figure><img src="./images/ontario.png"><figcaption>PNG</figcaption></figure>
+		</div>
+
+		<div id="paragraphs">
+			<p>Sheridan / Davis Campus / <img src="./images/davis.png" width="25px"> / Located in Brampton, ON</p>
+			<p>Sheridan / <a href="#">Trafalgar</a> Campus / <img src="./images/trafalgar.png" width="25px"> / Located in Oakville, Ontario</p>
+			<p>Sheridan / HMC Campus / Located in Missisauga, Ontario</p>
+		</div>
+
+		<div id="selections">
+			<button onclick="containsImgElement()">Highlight all paragraphs that include an image</button>
+		</div>
+
+	</div>
+
+	
+	<hr>
+	<div style="text-align: center;">
+		<button onclick="campusImages()">Click to Display Campus Images</button>
+	</div>
+	<div id="output"></div>
+
+	<hr><br>
+	<div style="text-align: center;">
+		<a href="./pages/second.html" class="anchorCSS">Click For Second Page of jsReview ... </a>
+	</div>
+
+
+</body>
+</html>

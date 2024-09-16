@@ -1,0 +1,33 @@
+/* M02 Selectors */
+.gridArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "buttons1 selections" 
+    "list para"
+    ". output"
+  ;
+  place-items: center;
+  gap: 5px;
+}
+#buttons1 {grid-area: buttons1; display: flex;}
+#buttons1 button {flex: 1; margin: 2px; width: 125px; height: 50px; color: navy;}
+
+#list {grid-area: list; display: flex;}
+#list figure {flex: 1; margin: 15px;}
+#list img {width: 60px; height: 50px;}
+
+#paragraphs {grid-area: para; background-color: aliceblue;}
+#selections {grid-area: selections;}
+#outputArea {grid-area: output; border: thin solid navy;}
+
+figcaption {text-align: center; font-style: italic; font-size: 0.75em;}
+
+.anchorCSS { border-radius: 50px; background-color: navy; 
+    font-size: 1em; text-decoration: none; color: white; padding: 2px;
+    text-align: center; margin-bottom: 5px;}
+
+#nextButton {position: fixed; bottom: 5px; right: 5px;}
+
+.gifBorder{border: thick solid purple;}
+.h3Style {text-align: center; font-family: Times New Roman; color: white; background: navy;}

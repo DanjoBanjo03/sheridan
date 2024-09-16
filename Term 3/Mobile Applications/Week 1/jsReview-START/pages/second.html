@@ -1,0 +1,51 @@
+<!-- SYST24444 jsReview -->
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jsReview - Page 2</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script src="../js/second.js"></script>
+	<link href="../css/second.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="gridArea">
+	<div id="goback">
+		<button onclick="history.back()" class="linkCSS">Click to go back</button>
+		<button onclick="location.reload()" class="linkCSS"">Restore Page</button>
+	</div>
+
+	<!-- Create functions to complete tasks in button text -->
+	<div id="buttons2">
+		<button onclick="startsWithEx()">Change text to red and font-size to 1.25em for any section whose <strong>title attribute starts with 'Text'</strong></button>
+		<button onclick="containsEx()">Change text to italic and font-size to 1.25em for any section <strong>that contains the word 'color'</strong></button>
+		<button onclick="hasEx()">Underline text and change font-size to 1.25em for any <strong>section that has a paragraph that contains the text 'para3'</button>
+	</div>
+
+	<!-- Create functions to complete tasks in sections below -->
+	<div id="sections">
+		<section onclick="clickMe()" title="Text area used for click">
+			<strong>Click for a message</strong>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae
+			enim justo. Mauris eget augue id lorem consequat laoreet.  <img src='../images/Canada_flag.jpg' class='smallimg'>
+			<p>Paragraph for para1</p>
+		</section><hr>
+		<section id="fadeOutOnly" onclick="fadeOutOnly(this.id)" title="Text area used for fade example">
+			<img src='../images/logical.gif' class='smallimg'> <strong>Click on this section for fade example.</strong> 
+			Donec eu neque nunc color. Pellentesque pharetra nibh scelerisque tellus tincidunt in volutpat augue semper. Duis vitae sem eros. 
+			<p>Paragraph for para2</p>
+		</section><hr>
+		<section id="grow" onclick="growMe(this.id)" title="Expand example">
+			<strong>Click on this section for expand example. color</strong> 
+			Pellentesque pharetra nibh scelerisque tellus tincidunt in volutpat color
+			augue semper. Duis vitae sem eros.<img src='../images/ontario.png' class='smallimg'>
+			<p>Paragraph for para3</p>
+		</section>
+	</div>
+
+</div>
+
+</body>
+</html>
