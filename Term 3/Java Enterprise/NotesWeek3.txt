@@ -1,3 +1,10 @@
 MVC - Model View Controller
 M - Model (Buisness Object)
-V - View (Webpages) SRC/main/resources - static and template (d
+V - View (Webpages) SRC/main/resources - static and template (dynamic)
+C - Controller
+
+Http Request:
+1. URI - /courseDataInput
+2. Http method: get
+3. Request parameters - no
+
